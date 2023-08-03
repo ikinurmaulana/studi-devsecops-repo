@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background_auth"
+    tools:context=".AddVehicle">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolBarAdd"
+                app:title="Add New Car"
+                android:minHeight="?attr/actionBarSize"
+                app:titleTextColor="@android:color/white"
+                android:background="@color/colorPrimaryTransparent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/textFrom"
+                android:hint="@string/hintFrom"
+                android:textColorHint="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="25"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/white"/>
+
+            <EditText
+                android:id="@+id/textCarName"
+                android:hint="@string/hintCarName"
+                android:textColorHint="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="25"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/white"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textSubject"
+                    android:text="@string/hintDesc"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/textTipe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintTipe"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:maxLength="50"/>
+
+                <EditText
+                    android:id="@+id/textMerk"
+                    android:hint="@string/textMerk"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="50"/>
+
+<!--                <EditText-->
+<!--                    android:id="@+id/textPajakHari"-->
+<!--                    android:hint="@string/hintPajakHari"-->
+<!--                    android:textColorHint="@android:color/darker_gray"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="number" />-->
+
+                <EditText
+                    android:id="@+id/textPajakMulai"
+                    android:hint="@string/hintPajakDimulai"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    />
+
+<!--                <EditText-->
+<!--                    android:id="@+id/textServisHari"-->
+<!--                    android:hint="@string/servis_setiap_berapa_hari"-->
+<!--                    android:textColorHint="@android:color/darker_gray"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="number"/>-->
+
+                <EditText
+                    android:id="@+id/textServisMulai"
+                    android:hint="@string/servis_dimulai"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"/>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/white"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/imagePictText"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/addPicture"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        app:srcCompat="@drawable/ic_add_image_from_camera"/>
+
+                    <ImageButton
+                        android:id="@+id/addPhoto"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/ic_add_image_from_gallery"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_weight="3"
+                    android:id="@+id/imagePict0"
+                    android:layout_gravity="center"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    app:srcCompat="@drawable/ic_image_black_24dp"/>
+
+<!--                <ImageView-->
+<!--                    android:layout_weight="3"-->
+<!--                    android:id="@+id/imagePict1"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_width="180dp"-->
+<!--                    android:layout_height="180dp"-->
+<!--                    app:srcCompat="@drawable/ic_image_black_24dp"/>-->
+<!--                <ImageView-->
+<!--                    android:layout_weight="3"-->
+<!--                    android:id="@+id/imagePict2"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_width="180dp"-->
+<!--                    android:layout_height="180dp"-->
+<!--                    app:srcCompat="@drawable/ic_image_black_24dp"/>-->
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:backgroundTint="#34eb67"
+            app:srcCompat="@drawable/ic_send"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+</ScrollView>
