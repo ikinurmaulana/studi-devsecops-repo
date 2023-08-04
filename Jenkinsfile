@@ -3,6 +3,7 @@ pipeline {
     stages {  
          stage('git') {
             steps {
+		git branch: 'main',
                 url: 'https://github.com/ikinurmaulana/studi-devsecops-repo.git'
             }
          }
