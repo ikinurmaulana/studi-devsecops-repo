@@ -1,15 +1,6 @@
 pipeline { 
     agent any  
     stages {  
-         stage("Code Checkout from GitLab") { 
-            environment {   
-              GITLAB_TOKEN = credentials('5ee3085d-0fa7-4219-886c-4fa057ed8bfe')  
-            } 
-            steps {
-              git branch: 'master',  
-              url: "https://github.com/ikinurmaulana/studi-devsecops-repo"
-            } 
-         } 
          stage('Sonar') {
             environment {
                 SCANNER_HOME = tool 'sonar-scanner'
