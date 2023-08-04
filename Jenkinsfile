@@ -1,6 +1,11 @@
 pipeline { 
     agent any  
     stages {  
+         stage('git') {
+            steps {
+                git 'https://github.com/ikinurmaulana/studi-devsecops-repo.git'
+            }
+         }
          stage('Sonar') {
             environment {
                 SCANNER_HOME = tool 'sonar-scanner'
