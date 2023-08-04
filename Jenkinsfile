@@ -1,25 +1,21 @@
 pipeline { 
     agent any  
     stages {  
-         stage('git') {
-            steps {
-		git branch: 'main',
-                url: 'https://github.com/ikinurmaulana/studi-devsecops-repo.git'
+        stage('Sonarqube') {   
+            environment {   
+              SONAR_SCANNER = tool('sonar-scanner')
+            } 
+          steps {  
+            script {   
+	        withSonarQubeEnv(credentialsId: 'sonarqube-secret', installationName: 'sonarqube-server') {
+	        sh '''${SONAR_SCANNER}/bin/sonar-scanner \
+                -Dsonar.projectKey=CM-Studi-DevSecOps \
+		-Dsonar.sources=. \
+		-Dsonar.java.jdkHome=/usr/lib/jvm/java-1.17.0-openjdk-amd64 \
+                -Dsonar.java.binaries=**/* '''
+                } 
             }
-         }
-         stage('Sonar') {
-            environment {
-                SCANNER_HOME = tool 'sonar-scanner'
-            }
-            steps {
-            withSonarQubeEnv(credentialsId: 'SonarQube-token', installationName: 'Sonarqube-test') {
-            sh '''$SCANNER_HOME/bin/sonar-scanner \
-            -Dsonar.projectKey=project-jenkins \
-            -Dsonar.projectName=project-jekins \
-            -Dsonar.java.jdkHome=/usr/lib/jvm/java-1.17.0-openjdk-amd64 \
-            -Dsonar.java.binaries=**/* '''
-            }
+          }
         }
     }
-}
 }
