@@ -3,7 +3,7 @@ pipeline {
     stages {  
          stage('git') {
             steps {
-                git 'https://github.com/ikinurmaulana/studi-devsecops-repo.git'
+                url: 'https://github.com/ikinurmaulana/studi-devsecops-repo.git'
             }
          }
          stage('Sonar') {
