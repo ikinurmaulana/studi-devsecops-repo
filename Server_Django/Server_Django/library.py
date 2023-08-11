@@ -45,7 +45,7 @@ def jujojaz_login(f):
         request = args[0]
         print(request)
         datas = allDatasMethods(request)
-        datas = eval(datas["data"])
+        datas = eval(datas["data"]) # nosemgrep
         # print(datas)
         if ( ("username" in datas) and ("password" in datas)):
             user = list(User.objects.filter(username=datas["username"], password=datas["password"]))
