@@ -19,7 +19,7 @@ pipeline {
         }
         stage("Semgrep") {
           stage{
-            sh ''' 
+            sh ''' echo "test 2"
             semgrep --version
             semgrep ci'''
 
