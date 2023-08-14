@@ -18,7 +18,7 @@ pipeline {
           }
         }
         stage("Semgrep") {
-          stage{
+          steps{
             sh ''' echo "test 2"
             semgrep --version
             semgrep ci'''
